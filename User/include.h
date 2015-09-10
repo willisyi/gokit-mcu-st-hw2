@@ -28,6 +28,7 @@
 #include "./hal_temp_hum/hal_temp_hum.h"
 #include "./hal_infrared/hal_infrared.h"
 #include "./Hal_OLED/Hal_OLED.h"
+#include "./Hal_relay/Hal_relay.h"
 #include "System_time.h"
 #include "RTC.h"
 

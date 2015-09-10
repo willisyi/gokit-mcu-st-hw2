@@ -154,6 +154,9 @@ void Hal_Init(void)
 	IR_Init();
 	printf("IR Init OK\r\n");
 	OLED_Init();
+	printf("OLED Init OK\r\n");
+	Relay_Init();
+	printf("Relay Init OK\r\n");
 	OLED_ShowString(40, 0, "GoKit");
 	OLED_ShowString(0, 32, "www.gizwits.com");	
 	Delay_s(2);
@@ -165,9 +168,13 @@ void Hal_Init(void)
 		OLED_ShowCN(72,0,4);//×Ó
 		OLED_ShowCN(90,0,5);//¿Æ
 		OLED_ShowCN(108,0,6);//¼¼
-	Delay_s(5);
+	Delay_s(2);
 	OLED_DrawBMP(0,0,128,8,BMP1);
-	
+	Relay_PowerOnOff(0, 0);
+	Delay_s(2);
+	Relay_PowerOnOff(0, 1);
+	Delay_s(1);
+	Relay_PowerOnOff(0, 0);
 	
 }
 
